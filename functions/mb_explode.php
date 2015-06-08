@@ -10,7 +10,7 @@
 	 * @return array
 	 */
 	function mb_explode($pattern, $string, $limit = -1, $flags = 0) {		
-		$strlen = mb_strlen($string);		
+		$strlen = strlen($string);		// bytes!	
 		mb_ereg_search_init($string);
 		
 		$lengths = array();
@@ -30,7 +30,6 @@
 			if ($position >= $strlen) {
 				break;
 			}			
-			mb_ereg_search_setpos($position);						
 		}
 
 		// Add last bit, if not ending with split
