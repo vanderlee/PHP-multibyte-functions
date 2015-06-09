@@ -46,15 +46,15 @@
 			if ($limit > 0 && !$is_delimiter && ($length[0] || ~$flags & PREG_SPLIT_NO_EMPTY) && ++$count > $limit) {
 				if ($length[0] > 0 || ~$flags & PREG_SPLIT_NO_EMPTY) {			
 					$parts[]	= $flags & PREG_SPLIT_OFFSET_CAPTURE
-								? array(mb_substr($string, $position), $position)
-								: mb_substr($string, $position);				
+								? array(mb_strcut($string, $position), $position)
+								: mb_strcut($string, $position);				
 				}
 				break;
 			} elseif ((!$is_delimiter || ($flags & PREG_SPLIT_DELIM_CAPTURE && $is_captured))
 				   && ($length[0] || ~$flags & PREG_SPLIT_NO_EMPTY)) {
 				$parts[]	= $flags & PREG_SPLIT_OFFSET_CAPTURE
-							? array(mb_substr($string, $position, $length[0]), $position)
-							: mb_substr($string, $position, $length[0]);
+							? array(mb_strcut($string, $position, $length[0]), $position)
+							: mb_strcut($string, $position, $length[0]);
 			}
 			
 			$position += $length[0];
