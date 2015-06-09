@@ -199,4 +199,30 @@ class mb_explodeTest extends PHPUnit_Framework_TestCase {
 		$this->assertSame(preg_split('/x/', 'x2x', 2, $flags), mb_explode('x', 'x2x', 2, $flags));
 		$this->assertSame(preg_split('/x/', '11x22x33', 2, $flags), mb_explode('x', '11x22x33', 2, $flags));
 	}
+
+	/**
+	 * @covers mb_explode
+	 * @group  multibyte
+	 */
+	public function testNewlineEmpty() {
+		$flags = PREG_SPLIT_DELIM_CAPTURE;
+		
+		$this->assertSame(array('a', 'b'), mb_explode('\r\n|\r|\n', "a\nb", -1, $flags));
+		$this->assertSame(array('a', "\n", 'b'), mb_explode('(\r\n|\r|\n)', "a\nb", -1, $flags));
+		$this->assertSame(array('a', "\r\n", 'b'), mb_explode('(\r\n|\r|\n)', "a\r\nb", -1, $flags));
+		$this->assertSame(array('a', "\r", 'b'), mb_explode('(\r\n|\r|\n)', "a\rb", -1, $flags));
+		$this->assertSame(array('a', "\n", '', "\r", 'b'), mb_explode('(\r\n|\r|\n)', "a\n\rb", -1, $flags));
+		$this->assertSame(preg_split('~(\r\n|\r|\n)~', "a\n\rb", -1, $flags), mb_explode('(\r\n|\r|\n)', "a\n\rb", -1, $flags));
+	}
+
+	/**
+	 * @covers mb_explode
+	 * @group  multibyte
+	 */
+	public function testNewlineNoEmpty() {
+		$flags = PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY;
+		
+		$this->assertSame(array('a', "\n", "\r", 'b'), mb_explode('(\r\n|\r|\n)', "a\n\rb", -1, $flags));
+		$this->assertSame(preg_split('~(\r\n|\r|\n)~', "a\n\rb", -1, $flags), mb_explode('(\r\n|\r|\n)', "a\n\rb", -1, $flags));
+	}
 }
