@@ -13,5 +13,5 @@ function mb_ucfirst($string, $encoding = null)
 	}
 
 	return mb_strtoupper(mb_substr($string, 0, 1, $encoding), $encoding)
-			. mb_substr($string, 1, null, $encoding);
+			. mb_substr($string, 1, mb_strlen($string, $encoding) - 1, $encoding);
 }
