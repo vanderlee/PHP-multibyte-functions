@@ -4,7 +4,7 @@ Version 1.1
 
 [![Build Status](https://travis-ci.org/vanderlee/PHP-multibyte-functions.svg)](https://travis-ci.org/vanderlee/PHP-multibyte-functions)
 
-Copyright &copy; 2015 Martijn van der Lee.
+Copyright &copy; 2015-2016 Martijn van der Lee.
 MIT Open Source license applies.
 
 Introduction
