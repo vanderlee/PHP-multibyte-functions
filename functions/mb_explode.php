@@ -12,6 +12,11 @@
 function mb_explode($pattern, $string, $limit = -1, $flags = 0)
 {
 	$strlen = strlen($string);  // bytes!
+
+	if (!$strlen) {
+		return array('');
+	}
+
 	mb_ereg_search_init($string);
 
 	$lengths = array();
