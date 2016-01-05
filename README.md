@@ -15,7 +15,7 @@ Unittests included.
 
 Methods
 -------
-### ***`string`*** `trim(`***`string`*** `$str)`
+### ***`string`*** `mb_trim(`***`string`*** `$str)`
 Trims whitespace from both the left and right side of the string.
 
 ### ***`array`*** `mb_explode(`***`string`*** `$pattern, `***`string`*** `$subject, `***`integer`*** `$limit = -1, `***`integer`*** `$flags = 0)`
