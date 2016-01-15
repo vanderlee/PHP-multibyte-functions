@@ -1,0 +1,16 @@
+{
+	"name": "vanderlee/multibyte",
+	"description": "A collection of multibyte functions.",
+	"type": "library",
+	"keywords": ["multibyte", "mb", "utf", "functions", "function"],
+	"homepage": "https://github.com/vanderlee/PHP-multibyte-functions",
+	"license": "MIT",
+	"support": {
+		"issues": "https://github.com/vanderlee/PHP-multibyte-functions/issues",
+		"source": "https://github.com/vanderlee/PHP-multibyte-functions/"
+	},
+	"require": {
+		"php": ">=5.2.0"
+	}
+}
+
