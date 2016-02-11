@@ -11,6 +11,14 @@
 	},
 	"require": {
 		"php": ">=5.2.0"
-	}
+	},
+	"autoload": {
+        "files": [
+			"functions/mb_explode.php",
+			"functions/mb_trim.php",
+			"functions/mb_ucfirst.php",
+			"functions/mb_ucwords.php"
+		]
+    }
 }
 
