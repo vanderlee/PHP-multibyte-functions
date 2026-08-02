@@ -33,14 +33,13 @@ if (!function_exists('mb_str_pad')) {
         $paddingLength = $length - $stringLength;
         $padLength = mb_strlen($padString, $encoding);
         $padding = str_repeat($padString, (int) ceil($paddingLength / $padLength));
-        $padding = mb_substr($padding, 0, $paddingLength, $encoding);
 
         if ($padType === STR_PAD_LEFT) {
-            return $padding . $string;
+            return mb_substr($padding, 0, $paddingLength, $encoding) . $string;
         }
 
         if ($padType === STR_PAD_RIGHT) {
-            return $string . $padding;
+            return $string . mb_substr($padding, 0, $paddingLength, $encoding);
         }
 
         $leftLength = (int) floor($paddingLength / 2);
@@ -48,6 +47,6 @@ if (!function_exists('mb_str_pad')) {
 
         return mb_substr($padding, 0, $leftLength, $encoding)
             . $string
-            . mb_substr($padding, $leftLength, $rightLength, $encoding);
+            . mb_substr($padding, 0, $rightLength, $encoding);
     }
 }
