@@ -1,40 +1,55 @@
 PHP multibyte functions
 ========
-Version 1.1.1
 
 [![Tests](https://github.com/vanderlee/PHP-multibyte-functions/actions/workflows/tests.yml/badge.svg)](https://github.com/vanderlee/PHP-multibyte-functions/actions/workflows/tests.yml)
 
-Copyright &copy; 2015-2016 Martijn van der Lee.
+Copyright &copy; 2015-2026 Martijn van der Lee.
 MIT Open Source license applies.
 
 Introduction
 ------------
-This is just a collection of multibyte (mb_*) functions to augment the builtin
-functions.
+A collection of multibyte string helpers and compatibility polyfills. Functions
+are only declared when PHP does not already provide them, so the package can be
+loaded safely on both legacy and current PHP releases.
 
-Unittests included.
+PHP 8.4 polyfills
+-----------------
+The package provides compatible implementations of the multibyte functions
+introduced in PHP 8.4:
 
-Methods
--------
+* `mb_trim($string, $characters = null, $encoding = null)`
+* `mb_ltrim($string, $characters = null, $encoding = null)`
+* `mb_rtrim($string, $characters = null, $encoding = null)`
+* `mb_ucfirst($string, $encoding = null)`
+* `mb_lcfirst($string, $encoding = null)`
+
+The trim functions use PHP 8.4's Unicode whitespace set when `$characters` is
+`null`. An explicit `$characters` value is treated as a simple list of
+multibyte characters; range notation such as `a..z` is not supported, matching
+the native API.
+
+Additional functions
+--------------------
+
 ### mb_explode
 `array mb_explode($pattern, $subject[, $limit = -1[, $flags = 0 ] ])`
 
-Multibyte version of `preg_split`, including all it's flags.
-
-The `$pattern` behaves like the patterns of `mb_split`, all other arguments and the return is like preg_split.
-
-### mb_trim
-`string mb_trim($string)`
-
-Trims whitespace from both the left and right side of the string.
-
-### mb_ucfirst
-`string mb_ucfirst($string[, string $encoding = mb_internal_encoding() ])`
-
-Make a string's first character uppercase.
+Multibyte version of `preg_split`, including its flags. The `$pattern` behaves
+like an `mb_split` pattern; the other arguments and return value follow
+`preg_split`.
 
 ### mb_ucwords
 `string mb_ucwords($string[, string $encoding = mb_internal_encoding() ])`
 
-Uppercase the first character of each word in a string.
+Uppercase the first character of each whitespace-delimited word in a string.
 
+Installation
+------------
+
+    composer require vanderlee/multibyte
+
+Development
+-----------
+
+    composer install
+    composer test
