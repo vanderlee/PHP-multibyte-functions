@@ -25,7 +25,12 @@
             "functions/mb_rtrim.php",
             "functions/mb_ucfirst.php",
             "functions/mb_lcfirst.php",
-            "functions/mb_ucwords.php"
+            "functions/mb_ucwords.php",
+            "functions/mb_str_split.php",
+            "functions/mb_str_pad.php",
+            "functions/mb_strrev.php",
+            "functions/mb_substr_replace.php",
+            "functions/mb_chunk_split.php"
         ]
     },
     "scripts": {
