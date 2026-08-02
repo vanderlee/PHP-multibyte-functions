@@ -2,7 +2,7 @@ PHP multibyte functions
 ========
 Version 1.1.1
 
-[![Build Status](https://travis-ci.org/vanderlee/PHP-multibyte-functions.svg)](https://travis-ci.org/vanderlee/PHP-multibyte-functions)
+[![Tests](https://github.com/vanderlee/PHP-multibyte-functions/actions/workflows/tests.yml/badge.svg)](https://github.com/vanderlee/PHP-multibyte-functions/actions/workflows/tests.yml)
 
 Copyright &copy; 2015-2016 Martijn van der Lee.
 MIT Open Source license applies.
