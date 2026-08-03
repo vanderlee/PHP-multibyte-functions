@@ -1,5 +1,6 @@
 PHP multibyte functions
 ========
+Version 1.2.0
 
 [![Tests](https://github.com/vanderlee/PHP-multibyte-functions/actions/workflows/tests.yml/badge.svg)](https://github.com/vanderlee/PHP-multibyte-functions/actions/workflows/tests.yml)
 
@@ -11,6 +12,22 @@ Introduction
 A collection of multibyte string helpers and compatibility polyfills. Functions
 are only declared when PHP does not already provide them, so the package can be
 loaded safely on both legacy and current PHP releases.
+
+Release 1.2.0
+-------------
+
+Version 1.2.0 adds PHP 8.4-compatible guarded polyfills, common multibyte
+string helpers, and support for current PHP releases without dropping the
+legacy PHP 5.x-compatible syntax.
+
+Highlights:
+
+* Safe loading on PHP 8.4 and newer without native-function redeclaration.
+* New `mb_trim()`, `mb_ltrim()`, `mb_rtrim()`, `mb_ucfirst()`, and
+  `mb_lcfirst()` compatibility implementations.
+* New `mb_str_split()` and `mb_str_pad()` polyfills.
+* New `mb_strrev()`, `mb_substr_replace()`, and `mb_chunk_split()` helpers.
+* Automated testing across PHP 5.3, 5.6, 7.4, 8.3, 8.4, and 8.5.
 
 PHP compatibility polyfills
 ---------------------------
