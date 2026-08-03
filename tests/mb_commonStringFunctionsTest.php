@@ -24,7 +24,7 @@ class mb_commonStringFunctionsTest extends PHPUnit_Framework_TestCase
 
     public function testSubstrReplaceSupportsPositiveAndNegativeOffsets()
     {
-        $this->assertSame('Καλημέρα κόσμε', mb_substr_replace('Καλημέρα κόσμου', 'ε', -1, 1, 'UTF-8'));
+        $this->assertSame('Καλημέρα κόσμε', mb_substr_replace('Καλημέρα κόσμου', 'ε', -2, 2, 'UTF-8'));
         $this->assertSame('abc世界f', mb_substr_replace('abcdef', '世界', 3, 2, 'UTF-8'));
         $this->assertSame('abXef', mb_substr_replace('abcdef', 'X', 2, -2, 'UTF-8'));
         $this->assertSame('abcX', mb_substr_replace('abcdef', 'X', 3, null, 'UTF-8'));
