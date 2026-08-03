@@ -1,5 +1,7 @@
 <?php
 
+mb_internal_encoding('UTF-8');
+
 if (!class_exists('PHPUnit_Framework_TestCase', false)) {
     class_exists('PHPUnit\\Framework\\TestCase');
 
