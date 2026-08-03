@@ -18,3 +18,8 @@ require_once __DIR__ . '/../functions/mb_rtrim.php';
 require_once __DIR__ . '/../functions/mb_ucfirst.php';
 require_once __DIR__ . '/../functions/mb_lcfirst.php';
 require_once __DIR__ . '/../functions/mb_ucwords.php';
+require_once __DIR__ . '/../functions/mb_str_split.php';
+require_once __DIR__ . '/../functions/mb_str_pad.php';
+require_once __DIR__ . '/../functions/mb_strrev.php';
+require_once __DIR__ . '/../functions/mb_substr_replace.php';
+require_once __DIR__ . '/../functions/mb_chunk_split.php';
