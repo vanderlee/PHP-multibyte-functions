@@ -109,8 +109,11 @@ if (!function_exists('_vanderlee_mb_trim_impl')) {
             }
         }
 
-        return $end === $start
-            ? ''
-            : mb_substr($string, $start, $end - $start, $encoding);
+        $result = '';
+        for ($index = $start; $index < $end; ++$index) {
+            $result .= mb_substr($string, $index, 1, $encoding);
+        }
+
+        return $result;
     }
 }
