@@ -1,8 +1,8 @@
 {
     "name": "vanderlee/multibyte",
-    "description": "A collection of multibyte functions.",
+    "description": "A collection of multibyte string functions and polyfills.",
     "type": "library",
-    "keywords": ["multibyte", "mb", "utf", "functions", "function"],
+    "keywords": ["multibyte", "mb", "utf", "functions", "function", "polyfill"],
     "homepage": "https://github.com/vanderlee/PHP-multibyte-functions",
     "license": "MIT",
     "support": {
@@ -14,14 +14,23 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8 || ^5.7 || ^9.6"
+        "phpunit/phpunit": "^4.8 || ^5.7 || ^9.6 || ^11.5"
     },
     "autoload": {
         "files": [
+            "functions/mb_polyfill_helpers.php",
             "functions/mb_explode.php",
             "functions/mb_trim.php",
+            "functions/mb_ltrim.php",
+            "functions/mb_rtrim.php",
             "functions/mb_ucfirst.php",
-            "functions/mb_ucwords.php"
+            "functions/mb_lcfirst.php",
+            "functions/mb_ucwords.php",
+            "functions/mb_str_split.php",
+            "functions/mb_str_pad.php",
+            "functions/mb_strrev.php",
+            "functions/mb_substr_replace.php",
+            "functions/mb_chunk_split.php"
         ]
     },
     "scripts": {
